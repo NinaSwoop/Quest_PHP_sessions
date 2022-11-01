@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require 'inc/data/products.php'; ?>
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
@@ -18,4 +19,7 @@
         <?php } ?>
     </div>
 </section>
+<?php if (isset($_GET["add_to_cart"])) {
+    $_SESSION['favorite'] = $_GET["add_to_cart"];
+} ?>
 <?php require 'inc/foot.php'; ?>
